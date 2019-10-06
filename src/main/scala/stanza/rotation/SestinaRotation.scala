@@ -1,20 +1,9 @@
 package stanza.rotation
 
-import poetics.models.TerminalWord
-
-class SestinaRotation {
-  def nextStanza(ws: List[TerminalWord]): List[TerminalWord] = {
-    // TODO: error handling
+class SestinaRotation extends NTinaRotation {
+  def nextStanza[A](ws: List[A]): List[A] = {
+    require(ws.length == 6, "A sestina must have six terminal words!")
     val a :: b :: c :: d :: e :: f :: Nil = ws
     f :: a :: e :: b :: d :: c :: Nil
-  }
-  def lastStanza(ws: List[TerminalWord]): List[TerminalWord] = {
-    ws.drop(3).reverse
-  }
-
-  def rotate(ws: List[TerminalWord]): List[List[TerminalWord]] = {
-    val standardStanzas = (1 to 5).scanLeft(ws)((acc, _) => nextStanza(acc)).toList
-    val envoi = lastStanza(standardStanzas.last)
-    standardStanzas :+ envoi
   }
 }

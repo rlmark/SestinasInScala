@@ -3,7 +3,7 @@ package stanza.rotation
 import org.scalatest._
 
 class MongeanShuffleTest extends WordSpec with Matchers {
-  val monge = MongeanShuffle
+  val monge = new MongeanShuffle
 
   "Mongean Shuffle" should {
     "create a valid ordering for list of even length" in {
