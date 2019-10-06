@@ -2,7 +2,7 @@ package stanza.rotation
 
 class NTinaRotation {
 
-  def nextStanza[A](list: List[A]) = {
+  def mongeanNextStanza[A](list: List[A]) = {
     // 1.) Take your list and perform a Mongean shuffle
     val originalList = list
     val shuffledList = MongeanShuffle.shuffle(list)
@@ -21,13 +21,5 @@ class NTinaRotation {
 
     println(s"new first stanza: ${swappedOriginal.mkString(", ")}")
     println(s"new second stanza: ${swappedNext.mkString(", ")}")
-
   }
-
-}
-
-object Test extends App {
-
-  val nTina = new NTinaRotation()
-  nTina.nextStanza(List(1,2,3,4,5,6))
 }
