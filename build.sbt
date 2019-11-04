@@ -2,7 +2,7 @@ name := "SestinasInScala"
 
 version := "0.1"
 
-scalaVersion := "2.12.7"
+scalaVersion := "2.12.9"
 
 libraryDependencies ++= Seq(
   Dependencies.Scalactic,
@@ -12,7 +12,6 @@ libraryDependencies ++= Seq(
 scalacOptions ++= Seq(
   "-deprecation",                      
   "-encoding", "utf-8",                
-  "-explaintypes",                     
   "-language:existentials",            
   "-language:experimental.macros",     
   "-language:higherKinds",             
